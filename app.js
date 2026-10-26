@@ -10,3 +10,29 @@
 //    - save the end time (Date.now())
 //    - save the time using player.recordTime()
 // 5. After the loop, call player.showStats() to show total time and average time per riddle.
+import PromptSync from 'prompt-sync';
+import Player from './classes/Player.js';
+import Riddle from './classes/Riddle.js';
+import AllRiddles from './riddles/index.js';
+
+const prompt = PromptSync();
+console.log("Welcome to the Riddle Game!")
+const playerName = prompt("What is your name? ")
+const player= new Player(playerName)
+
+for(const riddleData of AllRiddles) {
+    const startTime = Date.now()
+
+    const riddle = new Riddle(
+    riddleData.id,
+    riddleData.name,
+    riddleData.taskDescription,
+    riddleData.correctAnswer
+)
+
+    riddle.ask(prompt)
+    const endTime = Date.now()
+    player.recordTime(startTime, endTime)
+}
+
+player.showStats()
