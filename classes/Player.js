@@ -15,9 +15,9 @@ export default class Player {
         this.times=[]
     }
 
-    recordTime(start, end) {
+    recordTime(start, end, penalty) {
         const duration = (end - start) / 1000
-        this.times.push(duration)
+        this.times.push(duration + penalty)
     }
 
     showStats() {
@@ -28,7 +28,7 @@ export default class Player {
         }
 
         const average = total/this.times.length
-        console.log("Total time:", total, "seconds")
-        console.log("Average time:", average, "seconds");
+        console.log("Total time:", total.toFixed(2), "seconds")
+        console.log("Average time:", average.toFixed(2), "seconds");
     }
 }

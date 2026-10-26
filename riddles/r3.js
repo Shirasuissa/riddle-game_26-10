@@ -8,5 +8,8 @@ export default {
     id: 3,
     name: "Days",
     taskDescription: "How many days are in a week?",
-    correctAnswer: "7"
+    correctAnswer: "7",
+    difficulty: "easy",
+    timeLimit: 10,
+    hint: "Think about Monday to Sunday."
 };

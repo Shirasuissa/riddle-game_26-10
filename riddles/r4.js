@@ -8,5 +8,8 @@ export default {
     id: 4,
     name: "Colors",
     taskDescription: "What color is the sky?",
-    correctAnswer: "blue"
+    correctAnswer: "blue",
+    difficulty: "easy",
+    timeLimit: 10,
+    hint: "Look up on a clear day."
 };

@@ -7,6 +7,9 @@
 export default {
     id: 5,
     name: "Simple Math",
-    taskDescription: "What is 10 * 2?",
-    correctAnswer: "20"
+    taskDescription: "What is 12 * 12?",
+    correctAnswer: "144",
+    difficulty: "hard",
+    timeLimit: 20,
+    hint: "Multiply 12 by 10 and then add 24."
 };

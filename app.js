@@ -10,6 +10,8 @@
 //    - save the end time (Date.now())
 //    - save the time using player.recordTime()
 // 5. After the loop, call player.showStats() to show total time and average time per riddle.
+
+
 import PromptSync from 'prompt-sync';
 import Player from './classes/Player.js';
 import Riddle from './classes/Riddle.js';
@@ -20,19 +22,44 @@ console.log("Welcome to the Riddle Game!")
 const playerName = prompt("What is your name? ")
 const player= new Player(playerName)
 
-for(const riddleData of AllRiddles) {
+let level = prompt("Choose difficulty: easy / medium / hard: ").toLowerCase()
+
+while(level !== "easy" && level !== "medium" && level !=="hard") {
+    console.log("Invalid difficulty, try again.")
+    level = prompt("Choose difficulty: easy / medium / hard: ").toLowerCase()
+}
+
+const filteredRiddles = AllRiddles.filter((riddle)=> {return riddle.difficulty===level}) 
+
+function shuffle(array){
+    for(let i = array.length-1; i>0; i--){
+        const randomIndex = Math.floor(Math.random()*(i+1));
+
+        [array[i],array[randomIndex]] = [array[randomIndex],array[i]];
+    }
+    return array
+}
+
+const shuffledRiddles = shuffle(filteredRiddles)
+
+
+for(const riddleData of shuffledRiddles) {
     const startTime = Date.now()
 
     const riddle = new Riddle(
     riddleData.id,
     riddleData.name,
     riddleData.taskDescription,
-    riddleData.correctAnswer
+    riddleData.correctAnswer,
+    riddleData.timeLimit,
+    riddleData.hint
 )
 
-    riddle.ask(prompt)
+    const penalty = riddle.ask(prompt);
+
     const endTime = Date.now()
-    player.recordTime(startTime, endTime)
+
+    player.recordTime(startTime, endTime, penalty)
 }
 
 player.showStats()
