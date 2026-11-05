@@ -29,6 +29,8 @@ export default class Player {
 
         const average = total/this.times.length
         console.log("Total time:", total.toFixed(2), "seconds")
-        console.log("Average time:", average.toFixed(2), "seconds");
+        console.log("Average time:", average.toFixed(2), "seconds")
+
+        return total
     }
 }

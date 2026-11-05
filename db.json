@@ -1,0 +1,56 @@
+{
+  "riddles": [
+    {
+      "id": 1,
+      "name": "Easy Math",
+      "taskDescription": "What is 5 + 3?",
+      "correctAnswer": "8",
+      "difficulty": "easy",
+      "timeLimit": 3,
+      "hint": "Add five and three."
+    },
+    {
+      "id": 2,
+      "name": "Capital City",
+      "taskDescription": "What is the capital of France?",
+      "correctAnswer": "Paris",
+      "difficulty": "medium",
+      "timeLimit": 15,
+      "hint": "It is a famous city in France."
+    },
+    {
+      "id": 3,
+      "name": "Days",
+      "taskDescription": "How many days are in a week?",
+      "correctAnswer": "7",
+      "difficulty": "easy",
+      "timeLimit": 10,
+      "hint": "Think about Monday to Sunday."
+    },
+    {
+      "id": 4,
+      "name": "Colors",
+      "taskDescription": "What color is the sky?",
+      "correctAnswer": "blue",
+      "difficulty": "easy",
+      "timeLimit": 10,
+      "hint": "Look up on a clear day."
+    },
+    {
+      "id": 5,
+      "name": "Simple Math",
+      "taskDescription": "What is 12 * 12?",
+      "correctAnswer": "144",
+      "difficulty": "hard",
+      "timeLimit": 20,
+      "hint": "Multiply 12 by 10 and then add 24."
+    }
+  ],
+  "players": [
+    {
+      "name": "shira",
+      "lowestTime": 6.158,
+      "id": 1
+    }
+  ]
+}
